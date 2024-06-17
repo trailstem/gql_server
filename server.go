@@ -35,7 +35,8 @@ func main() {
 
 	service := services.New(db)
 
-	srv := handler.NewDefaultServer(internal.NewExecutableSchema(internal.Config{Resolvers: &graph.Resolver{
+	srv := handler.NewDefaultServer(internal.NewExecutableSchema(
+		internal.Config{Resolvers: &graph.Resolver{
 		Srv: service,
 	}, Directives: internal.DirectiveRoot{
 		IsAuthenticated: graph.IsAuthenticated,
